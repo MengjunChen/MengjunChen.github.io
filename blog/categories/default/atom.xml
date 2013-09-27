@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[CMJ's Blog]]></title>
-  <link href="http://MengjunChen.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Default | CMJ's Blog]]></title>
+  <link href="http://MengjunChen.github.io/blog/categories/default/atom.xml" rel="self"/>
   <link href="http://MengjunChen.github.io/"/>
   <updated>2013-09-26T11:42:50+08:00</updated>
   <id>http://MengjunChen.github.io/</id>
@@ -60,16 +60,12 @@ or formatting instructions.</p></blockquote>
 
 <h2>Installation</h2>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>git clone <span class="o">[</span>git-repo-url<span class="o">]</span> dillinger
-</span><span class='line'><span class="nb">cd </span>dillinger
-</span><span class='line'>npm i -d
-</span><span class='line'>mkdir -p public/files/<span class="o">{</span>md,html,pdf<span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<p><code>sh
+git clone [git-repo-url] dillinger
+cd dillinger
+npm i -d
+mkdir -p public/files/{md,html,pdf}
+</code></p>
 
 <h5>Configure Plugins. Instructions in following README.md files</h5>
 
@@ -80,19 +76,16 @@ or formatting instructions.</p></blockquote>
 </ul>
 
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>node app
-</span></code></pre></td></tr></table></div></figure>
-
+<p><code>sh
+node app
+</code></p>
 
 <h2>For Nodejitsu Deployment</h2>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>npm version <span class="o">[</span> | major | minor | patch | build<span class="o">]</span>
-</span><span class='line'>jitsu deploy
-</span></code></pre></td></tr></table></div></figure>
-
+<p><code>sh
+npm version [ | major | minor | patch | build]
+jitsu deploy
+</code></p>
 
 <h2>License</h2>
 
