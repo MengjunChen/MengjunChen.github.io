@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 20-Min-Tech | See MJ !]]></title>
   <link href="http://MengjunChen.github.io/blog/categories/20-min-tech/atom.xml" rel="self"/>
   <link href="http://MengjunChen.github.io/"/>
-  <updated>2015-01-12T21:26:05+08:00</updated>
+  <updated>2015-01-12T22:20:59+08:00</updated>
   <id>http://MengjunChen.github.io/</id>
   <author>
     <name><![CDATA[Chen Mengjun]]></name>
@@ -12,6 +12,109 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[SVN配置文件解析]]></title>
+    <link href="http://MengjunChen.github.io/blog/2015/01/12/svnpei-zhi-wen-jian-jie-xi/"/>
+    <updated>2015-01-12T21:31:00+08:00</updated>
+    <id>http://MengjunChen.github.io/blog/2015/01/12/svnpei-zhi-wen-jian-jie-xi</id>
+    <content type="html"><![CDATA[<p>搭建一个SVN服务器，主要用于代码、文件等的版本控制。</p>
+
+<p>通常有两种配置方式，一种是结合apache服务器，给apache添加SVN模块，修改配置，重启服务，这种方式相对复杂，但能提供多种认证，能建立一套安全的版本控制环境；另外一种是使用独立服务器，svnserve，这种方式简单暴力。除了环境本身的配置文件，apache的诸如httpd.conf, apache.conf，svnserve本身的svnserve.conf之外，SVN的权限管理文件的配置形式大体上一致。</p>
+
+<p>以svnserve为例，配置文件可启用一个配置文件authz管理所有仓库的配置，也可以配置成一个配置文件管理一个仓库的模式。这里简化，只介绍一个文件配置一个仓库的情况。</p>
+
+<p>authz的常见格式有：</p>
+
+<p>```</p>
+
+<h1>每一部分通常为组定义，可以有多个组，每个账号可以属于多个组</h1>
+
+<h1>通常一组为一行，后面的定义会覆盖前面组的定义</h1>
+
+<p>[groups]
+group = user1, user2
+group2 = user3, user4, user5
+group3 = @group, user6</p>
+
+<h1>以下是目录权限定义</h1>
+
+<h1>权限的表达方式只分为：只读r, 读写rw, 无权限</h1>
+
+<h1>等号左边的*号表示对所有</h1>
+
+<p>[/]
+* = r
+@group = rw
+user4 = rw</p>
+
+<p>[/]
+@group2 = rw
+user6 = rw</p>
+
+<p>[/trunk]
+@group3 = rw
+user5 = rw</p>
+
+<p>[/tags]
+@group3 = r
+user5 = rw
+<code>
+对于组的定义</code>[groups]```有几点说明：</p>
+
+<ul>
+<li><ul>
+<li>组的等价定义是一种包含关系，如上文，组group3包含了用户user1, user2, user6,在目录权限<code>[/trunk]</code>中，组拥有读写权限，表示此目录对用户user1, user2, user6开放；</li>
+</ul>
+</li>
+<li><ul>
+<li>组包含了另外一个等价组，当另外一个组没有定义时，配置文件不合法</li>
+</ul>
+</li>
+<li><ul>
+<li>组之间若有相互引用，换言之，组不能被解析尽，则配置文件不合法, 如下所示</li>
+</ul>
+</li>
+</ul>
+
+
+<p><code>
+[groups]
+group=@group1
+group1=@group2, user6
+group2=@group, user5
+</code>
+* 同理，当权限定义中, 某个路径指定了某个组没有定义，配置文件也不合法？</p>
+
+<p>关于大小写，尝试了某个版本，发现：
+* &ndash; 路径是大小写区分的
+* &ndash; 用户是大小写区分的
+* &ndash; 组是大小写不区分的</p>
+
+<p>此外，路径必须要是绝对路径，以'/&lsquo;开头，否则，配置文件失效。
+配置文件失效的时候，在客户端连接SVN服务器的时候能够得到'invalid authz'的提示。</p>
+
+<p>测试过程
+```</p>
+
+<h1>配置文件</h1>
+
+<p>authz
+passwd</p>
+
+<h1>启动服务：</h1>
+
+<p>svnserve -d -r /home/cmj/svn-project/</p>
+
+<h1>使用客户端连接:</h1>
+
+<p>svn checkout svn://[server_ip]/repos/doc &mdash;username bob
+```
+如上文，出现了两次关于SVN的路径定义会覆盖？</p>
+
+<p>大多数的SVN服务器版本来说，配置文件中路径的定义并没有先后之分,被引用组的定义甚至可以出现在被引用之后，而与在之前定义并无二义。但是对于某些较早时代的版本与现代的版本有较大差异，部分SVN配置文件对于父子目录的权限控制有相关关系。此是后话。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[无损压缩算法优劣之比较]]></title>
