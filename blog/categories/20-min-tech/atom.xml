@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 20-Min-Tech | See MJ !]]></title>
   <link href="http://MengjunChen.github.io/blog/categories/20-min-tech/atom.xml" rel="self"/>
   <link href="http://MengjunChen.github.io/"/>
-  <updated>2015-01-12T22:20:59+08:00</updated>
+  <updated>2015-01-12T22:22:00+08:00</updated>
   <id>http://MengjunChen.github.io/</id>
   <author>
     <name><![CDATA[Chen Mengjun]]></name>
@@ -84,12 +84,25 @@ group=@group1
 group1=@group2, user6
 group2=@group, user5
 </code>
-* 同理，当权限定义中, 某个路径指定了某个组没有定义，配置文件也不合法？</p>
+同理，当权限定义中, 某个路径指定了某个组没有定义，配置文件也不合法？</p>
 
-<p>关于大小写，尝试了某个版本，发现：
-* &ndash; 路径是大小写区分的
-* &ndash; 用户是大小写区分的
-* &ndash; 组是大小写不区分的</p>
+<p>关于大小写，尝试了某个版本，发现：</p>
+
+<ul>
+<li><ul>
+<li>路径是大小写区分的</li>
+</ul>
+</li>
+<li><ul>
+<li>用户是大小写区分的</li>
+</ul>
+</li>
+<li><ul>
+<li>组是大小写不区分的</li>
+</ul>
+</li>
+</ul>
+
 
 <p>此外，路径必须要是绝对路径，以'/&lsquo;开头，否则，配置文件失效。
 配置文件失效的时候，在客户端连接SVN服务器的时候能够得到'invalid authz'的提示。</p>
