@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>三毛之温柔的夜 - See MJ !</title>
+  <title>无损压缩算法优劣之比较 - See MJ !</title>
   <meta name="author" content="Chen Mengjun">
 
   
-  <meta name="description" content="
-">
+  <meta name="description" content="数据压缩常见于传输、存储，按照数据能否被还原，压缩算法可以分有损压缩和无损压缩。有损压缩，常见于视频，图像传输，主要为了降低带宽，加快传达。这里讨论无损压缩。无损压缩主要是采用了编码的技术，利用数据冗余进行压缩而不引起失真，例如Huffman编码。 基于无损压缩的算法有很多，算法相对复杂， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://MengjunChen.github.io/blog/2014/07/22/san-mao-zhi-wen-rou-de-ye/">
+  <link rel="canonical" href="http://MengjunChen.github.io/blog/2015/01/03/ya-suo-suan-fa-you-lie-zhi-bi-jiao/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -71,7 +70,7 @@
   
   <header>
     
-      <h3 class="entry-title">三毛之温柔的夜</h1>
+      <h3 class="entry-title">无损压缩算法优劣之比较</h1>
     
     
       <p class="meta">
@@ -87,14 +86,86 @@
   
 
 
-<time datetime="2014-07-22T13:55:00+08:00" pubdate data-updated="true">Jul 22<span>nd</span>, 2014</time>
+<time datetime="2015-01-03T23:03:00+08:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2015</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content">
+<div class="entry-content"><p>数据压缩常见于传输、存储，按照数据能否被还原，压缩算法可以分有损压缩和无损压缩。有损压缩，常见于视频，图像传输，主要为了降低带宽，加快传达。这里讨论无损压缩。无损压缩主要是采用了编码的技术，利用数据冗余进行压缩而不引起失真，例如Huffman编码。</p>
+
+<p>基于无损压缩的算法有很多，算法相对复杂，常见的有zip, 7z, winrar, lzop，gzip等。这里无关算法，只关心它们的使用。有的压缩算法常常会结合打包进行，例如gzip和tar打包结合，有的算法，不仅利用了文件内部的冗余，也利用了文件和文件之间的冗余。基于此，压缩算法又分为两种，solid和非solid的。</p>
+
+<p>solid compression，多个文件一起打包，特别是对于同种格式的数据文件，可以利用文件之间的相似性，得到最大程度的压缩率。这种方式比较适用于打包并压缩许多无压缩小文件的情况。例如7zip和gzip算法，都属于这种类型。</p>
+
+<p>非solid compression,即使在多个文件一起打包时，内部也是针对一个一个文件进行压缩，文件的隔离性很好，压缩速度也比较快，总之各种好，唯独在处理许多小文件的压缩时，效果不是很理想。例如zip的压缩。</p>
+
+<p>凡使用压缩算法，无论是传输和存储，无非是空间换时间，或者时间换空间的障眼法。压缩算法使用的指标，常见有：压缩时间、压缩率、解压速度、内存要求、压缩中是否保持原有文件属性、有没有简单易用的库可用，等等。</p>
+
+<p>常用压缩算法，比较：</p>
+
+<table>
+<thead>
+<tr>
+<th>压缩算法 </th>
+<th> 压缩时间 </th>
+<th> 压缩率 </th>
+<th> 属性保存 </th>
+<th> 解压速度 </th>
+<th> solid </th>
+<th> 备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>zip </td>
+<td>  </td>
+<td>    </td>
+<td>   </td>
+<td>   </td>
+<td>  非solid </td>
+<td>  </td>
+</tr>
+<tr>
+<td>7z </td>
+<td>  文件越多，压缩时间越慢 </td>
+<td> 保存文件修改时间，不保存权限  </td>
+<td> </td>
+<td> 解压速度较快，遍历查找某个文件 </td>
+<td> solid </td>
+<td></td>
+</tr>
+<tr>
+<td>lzop </td>
+<td>  </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>  与7z类似</td>
+</tr>
+<tr>
+<td>winrar </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> windows平台</td>
+</tr>
+<tr>
+<td>gzip </td>
+<td> </td>
+<td>  </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> 一般与tar结合</td>
+</tr>
+</tbody>
+</table>
+
 </div>
 
 
@@ -117,12 +188,12 @@
   
 
 
-<time datetime="2014-07-22T13:55:00+08:00" pubdate data-updated="true">Jul 22<span>nd</span>, 2014</time>
+<time datetime="2015-01-03T23:03:00+08:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2015</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/women-i-love/'>Women_I_Love</a>
+    <a class='category' href='/blog/categories/20-min-tech/'>20-Min-Tech</a>
   
 </span>
 
@@ -131,7 +202,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://MengjunChen.github.io/blog/2014/07/22/san-mao-zhi-wen-rou-de-ye/" data-via="" data-counturl="http://MengjunChen.github.io/blog/2014/07/22/san-mao-zhi-wen-rou-de-ye/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://MengjunChen.github.io/blog/2015/01/03/ya-suo-suan-fa-you-lie-zhi-bi-jiao/" data-via="" data-counturl="http://MengjunChen.github.io/blog/2015/01/03/ya-suo-suan-fa-you-lie-zhi-bi-jiao/" >Tweet</a>
   
   
   
@@ -140,10 +211,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/07/08/mi-mi/" title="Previous Post: 秘密">&laquo; 秘密</a>
+        <a class="basic-alignment left" href="/blog/2014/11/08/ya-suo-suan-fa-you-lie-zhi-bi-jiao/" title="Previous Post: 压缩算法优劣之比较">&laquo; 压缩算法优劣之比较</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/10/28/gai-bian/" title="Next Post: 改变">改变 &raquo;</a>
       
     </p>
   </footer>
