@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 20-Min-Tech | See MJ !]]></title>
   <link href="http://MengjunChen.github.io/blog/categories/20-min-tech/atom.xml" rel="self"/>
   <link href="http://MengjunChen.github.io/"/>
-  <updated>2015-01-12T22:22:00+08:00</updated>
+  <updated>2015-02-27T08:40:23+08:00</updated>
   <id>http://MengjunChen.github.io/</id>
   <author>
     <name><![CDATA[Chen Mengjun]]></name>
@@ -12,6 +12,68 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Python之禅]]></title>
+    <link href="http://MengjunChen.github.io/blog/2015/02/25/pythonzhi-shan/"/>
+    <updated>2015-02-25T11:36:00+08:00</updated>
+    <id>http://MengjunChen.github.io/blog/2015/02/25/pythonzhi-shan</id>
+    <content type="html"><![CDATA[<p>在python终端输入<code>import this</code>,将会显示python的语言哲学
+```c
+In [1]: import this
+The Zen of Python, by Tim Peters
+Python之禅</p>
+
+<p>Beautiful is better than ugly.
+美好过丑
+Explicit is better than implicit.
+明了好过晦涩
+Simple is better than complex.
+简单好过复杂
+Complex is better than complicated.
+复杂好过凌乱
+Flat is better than nested.
+扁平好过嵌套
+Sparse is better than dense.
+稀疏好过拥挤
+Readability counts.
+可读
+Special cases aren&rsquo;t special enough to break the rules.
+特殊实例不能打破规则
+Although practicality beats purity.
+即使当前实用迫切过一致
+Errors should never pass silently.
+错误不能忽略不理
+Unless explicitly silenced.
+除非你有意为止
+In the face of ambiguity, refuse the temptation to guess.
+模棱两可，猜测不能允许
+There should be one&mdash; and preferably only one &mdash;obvious way to do it.
+什么事情应该有——最好有一个显而易见的解决方式
+Although that way may not be obvious at first unless you&rsquo;re Dutch.
+一开始总是没那么显而易见谁让你不像荷兰人
+Now is better than never.
+有空还是看看
+Although never is often better than <em>right</em> now.
+即使往往有些问题不去理它好过立刻解决
+If the implementation is hard to explain, it&rsquo;s a bad idea.
+实现难以描述出来就不是个好主意
+If the implementation is easy to explain, it may be a good idea.
+实现能简单描述出来可能会是个好主意
+Namespaces are one honking great idea &mdash; let&rsquo;s do more of those!
+命名空间很了不起，可以多借鉴
+```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[NTP放大攻击]]></title>
+    <link href="http://MengjunChen.github.io/blog/2015/02/03/ntpfang-da-gong-ji/"/>
+    <updated>2015-02-03T15:46:00+08:00</updated>
+    <id>http://MengjunChen.github.io/blog/2015/02/03/ntpfang-da-gong-ji</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[SVN配置文件解析]]></title>

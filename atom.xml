@@ -4,7 +4,7 @@
   <title><![CDATA[See MJ !]]></title>
   <link href="http://MengjunChen.github.io/atom.xml" rel="self"/>
   <link href="http://MengjunChen.github.io/"/>
-  <updated>2015-01-12T22:22:00+08:00</updated>
+  <updated>2015-02-27T08:40:23+08:00</updated>
   <id>http://MengjunChen.github.io/</id>
   <author>
     <name><![CDATA[Chen Mengjun]]></name>
@@ -12,6 +12,111 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Python之禅]]></title>
+    <link href="http://MengjunChen.github.io/blog/2015/02/25/pythonzhi-shan/"/>
+    <updated>2015-02-25T11:36:00+08:00</updated>
+    <id>http://MengjunChen.github.io/blog/2015/02/25/pythonzhi-shan</id>
+    <content type="html"><![CDATA[<p>在python终端输入<code>import this</code>,将会显示python的语言哲学</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">:</span> <span class="n">import</span> <span class="n">this</span>
+</span><span class='line'><span class="n">The</span> <span class="n">Zen</span> <span class="n">of</span> <span class="n">Python</span><span class="p">,</span> <span class="n">by</span> <span class="n">Tim</span> <span class="n">Peters</span>
+</span><span class='line'><span class="n">Python</span><span class="err">之禅</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">Beautiful</span> <span class="n">is</span> <span class="n">better</span> <span class="n">than</span> <span class="n">ugly</span><span class="p">.</span>
+</span><span class='line'><span class="err">美好过丑</span>
+</span><span class='line'><span class="n">Explicit</span> <span class="n">is</span> <span class="n">better</span> <span class="n">than</span> <span class="n">implicit</span><span class="p">.</span>
+</span><span class='line'><span class="err">明了好过晦涩</span>
+</span><span class='line'><span class="n">Simple</span> <span class="n">is</span> <span class="n">better</span> <span class="n">than</span> <span class="n">complex</span><span class="p">.</span>
+</span><span class='line'><span class="err">简单好过复杂</span>
+</span><span class='line'><span class="n">Complex</span> <span class="n">is</span> <span class="n">better</span> <span class="n">than</span> <span class="n">complicated</span><span class="p">.</span>
+</span><span class='line'><span class="err">复杂好过凌乱</span>
+</span><span class='line'><span class="n">Flat</span> <span class="n">is</span> <span class="n">better</span> <span class="n">than</span> <span class="n">nested</span><span class="p">.</span>
+</span><span class='line'><span class="err">扁平好过嵌套</span>
+</span><span class='line'><span class="n">Sparse</span> <span class="n">is</span> <span class="n">better</span> <span class="n">than</span> <span class="n">dense</span><span class="p">.</span>
+</span><span class='line'><span class="err">稀疏好过拥挤</span>
+</span><span class='line'><span class="n">Readability</span> <span class="n">counts</span><span class="p">.</span>
+</span><span class='line'><span class="err">可读</span>
+</span><span class='line'><span class="n">Special</span> <span class="n">cases</span> <span class="n">aren</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">special</span> <span class="n">enough</span> <span class="n">to</span> <span class="k">break</span> <span class="n">the</span> <span class="n">rules</span><span class="p">.</span>
+</span><span class='line'><span class="err">特殊实例不能打破规则</span>
+</span><span class='line'><span class="n">Although</span> <span class="n">practicality</span> <span class="n">beats</span> <span class="n">purity</span><span class="p">.</span>
+</span><span class='line'><span class="err">即使当前实用迫切过一致</span>
+</span><span class='line'><span class="n">Errors</span> <span class="n">should</span> <span class="n">never</span> <span class="n">pass</span> <span class="n">silently</span><span class="p">.</span>
+</span><span class='line'><span class="err">错误不能忽略不理</span>
+</span><span class='line'><span class="n">Unless</span> <span class="n">explicitly</span> <span class="n">silenced</span><span class="p">.</span>
+</span><span class='line'><span class="err">除非你有意为止</span>
+</span><span class='line'><span class="n">In</span> <span class="n">the</span> <span class="n">face</span> <span class="n">of</span> <span class="n">ambiguity</span><span class="p">,</span> <span class="n">refuse</span> <span class="n">the</span> <span class="n">temptation</span> <span class="n">to</span> <span class="n">guess</span><span class="p">.</span>
+</span><span class='line'><span class="err">模棱两可，猜测不能允许</span>
+</span><span class='line'><span class="n">There</span> <span class="n">should</span> <span class="n">be</span> <span class="n">one</span><span class="o">--</span> <span class="n">and</span> <span class="n">preferably</span> <span class="n">only</span> <span class="n">one</span> <span class="o">--</span><span class="n">obvious</span> <span class="n">way</span> <span class="n">to</span> <span class="k">do</span> <span class="n">it</span><span class="p">.</span>
+</span><span class='line'><span class="err">什么事情应该有——最好有一个显而易见的解决方式</span>
+</span><span class='line'><span class="n">Although</span> <span class="n">that</span> <span class="n">way</span> <span class="n">may</span> <span class="n">not</span> <span class="n">be</span> <span class="n">obvious</span> <span class="n">at</span> <span class="n">first</span> <span class="n">unless</span> <span class="n">you</span><span class="err">&#39;</span><span class="n">re</span> <span class="n">Dutch</span><span class="p">.</span>
+</span><span class='line'><span class="err">一开始总是没那么显而易见谁让你不像荷兰人</span>
+</span><span class='line'><span class="n">Now</span> <span class="n">is</span> <span class="n">better</span> <span class="n">than</span> <span class="n">never</span><span class="p">.</span>
+</span><span class='line'><span class="err">有空还是看看</span>
+</span><span class='line'><span class="n">Although</span> <span class="n">never</span> <span class="n">is</span> <span class="n">often</span> <span class="n">better</span> <span class="n">than</span> <span class="o">*</span><span class="n">right</span><span class="o">*</span> <span class="n">now</span><span class="p">.</span>
+</span><span class='line'><span class="err">即使往往有些问题不去理它好过立刻解决</span>
+</span><span class='line'><span class="n">If</span> <span class="n">the</span> <span class="n">implementation</span> <span class="n">is</span> <span class="n">hard</span> <span class="n">to</span> <span class="n">explain</span><span class="p">,</span> <span class="n">it</span><span class="err">&#39;</span><span class="n">s</span> <span class="n">a</span> <span class="n">bad</span> <span class="n">idea</span><span class="p">.</span>
+</span><span class='line'><span class="err">实现难以描述出来就不是个好主意</span>
+</span><span class='line'><span class="n">If</span> <span class="n">the</span> <span class="n">implementation</span> <span class="n">is</span> <span class="n">easy</span> <span class="n">to</span> <span class="n">explain</span><span class="p">,</span> <span class="n">it</span> <span class="n">may</span> <span class="n">be</span> <span class="n">a</span> <span class="n">good</span> <span class="n">idea</span><span class="p">.</span>
+</span><span class='line'><span class="err">实现能简单描述出来可能会是个好主意</span>
+</span><span class='line'><span class="n">Namespaces</span> <span class="n">are</span> <span class="n">one</span> <span class="n">honking</span> <span class="n">great</span> <span class="n">idea</span> <span class="o">--</span> <span class="n">let</span><span class="err">&#39;</span><span class="n">s</span> <span class="k">do</span> <span class="n">more</span> <span class="n">of</span> <span class="n">those</span><span class="o">!</span>
+</span><span class='line'><span class="err">命名空间很了不起，可以多借鉴</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[NTP放大攻击]]></title>
+    <link href="http://MengjunChen.github.io/blog/2015/02/03/ntpfang-da-gong-ji/"/>
+    <updated>2015-02-03T15:46:00+08:00</updated>
+    <id>http://MengjunChen.github.io/blog/2015/02/03/ntpfang-da-gong-ji</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[SVN配置文件解析]]></title>
