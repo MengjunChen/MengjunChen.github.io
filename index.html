@@ -101,20 +101,25 @@ Git在开源界使用的更多，相比起来，SVN在企业界更吃香的主�
 Git在开源界使用的更多，相比起来，SVN在企业界更吃香的主要原因，一是由于Linux, Windows不同操作系统下完善的工具支持。Linux下有纯命令行工具，Windows下有乌龟(Tortorise)，可以查看代码修改、提交记录，撤销回滚，更新，轻而易举。
 另一个是因为它们的权限管理有较大区别。曾经在Debian下使用过gitosis搭建git远程仓库，它的配置文件gitosis.conf格式如下:</p>
 
-<p>&lsquo;&rsquo;&lsquo;
-[group mobile]
-members = scott
-writable = iphone_project
-&rsquo;&lsquo;&rsquo;</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[group mobile]
+</span><span class='line'>members = scott
+</span><span class='line'>writable = iphone_project</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Scott用户拥有项目<code>iphone_project</code>的写权限，git的权限设置粒度是基于项目的，开源界行得通的规律在企业界就玩不转了。企业里，一个项目可能关系整个企业命脉，权限这种管理的很严格，所以更需要像SVN这种基于目录设定权限的控制方式。使用过svnserve搭建过SVN远程仓库，它的配置文件authz的格式如下：</p>
 
-<p>&lsquo;&rsquo;&lsquo;
-<a href="project%E7%9A%84%E5%AD%90%E7%9B%AE%E5%BD%95">project:/server</a>
-@admin = rw
-@user = rw
-* =
-&rsquo;&lsquo;&rsquo;</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[project:/server](project的子目录)
+</span><span class='line'>@admin = rw
+</span><span class='line'>@user = rw
+</span><span class='line'>* = </span></code></pre></td></tr></table></div></figure>
+
 
 <p>在配置使用方面，SVN要比Git来的低效。比如想要设置忽略某种后缀文件，Git中，在Git工作区下建立一个名为.gitignore的文件，依次向其中写入你不需要git识别、提交的文件，git就不会对工作区中符合列表中条件的文件进行版本跟踪。.gitignore会被提交到仓库也影响对其他人提交的过滤，只在本地生效的方法是修改.git/info/exclude，书写规则相同，则不会影响其它人的设置。</p>
 
