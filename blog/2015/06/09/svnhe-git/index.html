@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>无损压缩算法优劣之比较 - See MJ !</title>
+  <title>Svn和Git比较 - See MJ !</title>
   <meta name="author" content="Chen Mengjun">
 
   
-  <meta name="description" content="数据压缩常见于传输、存储，按照数据能否被还原，压缩算法可以分有损压缩和无损压缩。有损压缩，常见于视频，图像传输，主要为了降低带宽，加快传达。这里讨论无损压缩。无损压缩主要是采用了编码的技术，利用数据冗余进行压缩而不引起失真，例如Huffman编码。 基于无损压缩的算法有很多，算法相对复杂， &hellip;">
+  <meta name="description" content="Git比SVN好的地方主要在于，去中心化。添加了本地仓库管理。对于经常更新自己工作进度的用户，它能支持离线存版本，打Tag，也能较好保护远程代码不被污染，更好地支持版本控制在实际应用场景中的需要。
+Git在开源界使用的更多，相比起来，SVN在企业界更吃香的主要原因，一是由于Linux, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://MengjunChen.github.io/blog/2015/01/03/ya-suo-suan-fa-you-lie-zhi-bi-jiao/">
+  <link rel="canonical" href="http://MengjunChen.github.io/blog/2015/06/09/svnhe-git/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -70,7 +71,7 @@
   
   <header>
     
-      <h3 class="entry-title">无损压缩算法优劣之比较</h1>
+      <h3 class="entry-title">Svn和Git比较</h1>
     
     
       <p class="meta">
@@ -86,26 +87,37 @@
   
 
 
-<time datetime="2015-01-03T23:03:00+08:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2015</time>
+<time datetime="2015-06-09T23:11:00+08:00" pubdate data-updated="true">Jun 9<span>th</span>, 2015</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>数据压缩常见于传输、存储，按照数据能否被还原，压缩算法可以分有损压缩和无损压缩。有损压缩，常见于视频，图像传输，主要为了降低带宽，加快传达。这里讨论无损压缩。无损压缩主要是采用了编码的技术，利用数据冗余进行压缩而不引起失真，例如Huffman编码。</p>
+<div class="entry-content"><p>Git比SVN好的地方主要在于，去中心化。添加了本地仓库管理。对于经常更新自己工作进度的用户，它能支持离线存版本，打Tag，也能较好保护远程代码不被污染，更好地支持版本控制在实际应用场景中的需要。
+Git在开源界使用的更多，相比起来，SVN在企业界更吃香的主要原因，一是由于Linux, Windows不同操作系统下完善的工具支持。Linux下有纯命令行工具，Windows下有乌龟(Tortorise)，可以查看代码修改、提交记录，撤销回滚，更新，轻而易举。
+另一个是因为它们的权限管理有较大区别。曾经在Debian下使用过gitosis搭建git远程仓库，它的配置文件gitosis.conf格式如下:</p>
 
-<p>基于无损压缩的算法有很多，算法相对复杂，常见的有zip, 7z, winrar, lzop，gzip等。这里无关算法，只关心它们的使用。有的压缩算法常常会结合打包进行，例如gzip和tar打包结合，有的算法，不仅利用了文件内部的冗余，也利用了文件和文件之间的冗余。基于此，压缩算法又分为两种，solid和非solid的。</p>
+<p>&lsquo;&rsquo;&lsquo;
+[group mobile]
+members = scott
+writable = iphone_project
+&rsquo;&lsquo;&rsquo;</p>
 
-<p>solid compression，多个文件一起打包，特别是对于同种格式的数据文件，可以利用文件之间的相似性，得到最大程度的压缩率。这种方式比较适用于打包并压缩许多无压缩小文件的情况。例如7zip和gzip算法，都属于这种类型。</p>
+<p>Scott用户拥有项目<code>iphone_project</code>的写权限，git的权限设置粒度是基于项目的，开源界行得通的规律在企业界就玩不转了。企业里，一个项目可能关系整个企业命脉，权限这种管理的很严格，所以更需要像SVN这种基于目录设定权限的控制方式。使用过svnserve搭建过SVN远程仓库，它的配置文件authz的格式如下：</p>
 
-<p>非solid compression,即使在多个文件一起打包时，内部也是针对一个一个文件进行压缩，文件的隔离性很好，压缩速度也比较快，总之各种好，唯独在处理许多小文件的压缩时，效果不是很理想。例如zip的压缩。</p>
+<p>&lsquo;&rsquo;&lsquo;
+<a href="project%E7%9A%84%E5%AD%90%E7%9B%AE%E5%BD%95">project:/server</a>
+@admin = rw
+@user = rw
+* =
+&rsquo;&lsquo;&rsquo;</p>
 
-<p>凡使用压缩算法，无论是传输和存储，无非是空间换时间，或者时间换空间的障眼法。压缩算法使用的指标，常见有：压缩时间、压缩率、解压速度、内存要求、压缩中是否保持原有文件属性、有没有简单易用的库可用，等等。</p>
+<p>在配置使用方面，SVN要比Git来的低效。比如想要设置忽略某种后缀文件，Git中，在Git工作区下建立一个名为.gitignore的文件，依次向其中写入你不需要git识别、提交的文件，git就不会对工作区中符合列表中条件的文件进行版本跟踪。.gitignore会被提交到仓库也影响对其他人提交的过滤，只在本地生效的方法是修改.git/info/exclude，书写规则相同，则不会影响其它人的设置。</p>
 
-<p>常用压缩算法，比较：</p>
+<p>SVN设置忽略要使用svn:ignore指令，旧版本的SVN更低效，每个文件夹底下有一个.svn，管理起来相当麻烦。据说新版的更改了这种管理方式。</p>
 
-<p><img src="/images/compress/zip.png" style="display: block;  margin: 0 auto; width: 600px"/></p>
+<p>把SVN仓库转换到Git仓库经典做法是使用官方提供的svn2git脚本。</p>
 </div>
 
 
@@ -128,7 +140,7 @@
   
 
 
-<time datetime="2015-01-03T23:03:00+08:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2015</time>
+<time datetime="2015-06-09T23:11:00+08:00" pubdate data-updated="true">Jun 9<span>th</span>, 2015</time>
       
 
 <span class="categories">
@@ -149,10 +161,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/10/28/gai-bian/" title="Previous Post: 改变">&laquo; 改变</a>
+        <a class="basic-alignment left" href="/blog/2015/02/25/pythonzhi-shan/" title="Previous Post: Python之禅">&laquo; Python之禅</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2015/01/12/svnpei-zhi-wen-jian-jie-xi/" title="Next Post: SVN配置文件解析">SVN配置文件解析 &raquo;</a>
       
     </p>
   </footer>

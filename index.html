@@ -9,46 +9,8 @@
   <meta name="author" content="Chen Mengjun">
 
   
-  <meta name="description" content="在python终端输入import this,将会显示python的语言哲学 1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40 &hellip;">
+  <meta name="description" content="Git比SVN好的地方主要在于，去中心化。添加了本地仓库管理。对于经常更新自己工作进度的用户，它能支持离线存版本，打Tag，也能较好保护远程代码不被污染，更好地支持版本控制在实际应用场景中的需要。
+Git在开源界使用的更多，相比起来，SVN在企业界更吃香的主要原因，一是由于Linux, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -106,6 +68,65 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h3 class="entry-title"><a href="/blog/2015/06/09/svnhe-git/">Svn和Git比较</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-06-09T23:11:00+08:00" pubdate data-updated="true">Jun 9<span>th</span>, 2015</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Git比SVN好的地方主要在于，去中心化。添加了本地仓库管理。对于经常更新自己工作进度的用户，它能支持离线存版本，打Tag，也能较好保护远程代码不被污染，更好地支持版本控制在实际应用场景中的需要。
+Git在开源界使用的更多，相比起来，SVN在企业界更吃香的主要原因，一是由于Linux, Windows不同操作系统下完善的工具支持。Linux下有纯命令行工具，Windows下有乌龟(Tortorise)，可以查看代码修改、提交记录，撤销回滚，更新，轻而易举。
+另一个是因为它们的权限管理有较大区别。曾经在Debian下使用过gitosis搭建git远程仓库，它的配置文件gitosis.conf格式如下:</p>
+
+<p>&lsquo;&rsquo;&lsquo;
+[group mobile]
+members = scott
+writable = iphone_project
+&rsquo;&lsquo;&rsquo;</p>
+
+<p>Scott用户拥有项目<code>iphone_project</code>的写权限，git的权限设置粒度是基于项目的，开源界行得通的规律在企业界就玩不转了。企业里，一个项目可能关系整个企业命脉，权限这种管理的很严格，所以更需要像SVN这种基于目录设定权限的控制方式。使用过svnserve搭建过SVN远程仓库，它的配置文件authz的格式如下：</p>
+
+<p>&lsquo;&rsquo;&lsquo;
+<a href="project%E7%9A%84%E5%AD%90%E7%9B%AE%E5%BD%95">project:/server</a>
+@admin = rw
+@user = rw
+* =
+&rsquo;&lsquo;&rsquo;</p>
+
+<p>在配置使用方面，SVN要比Git来的低效。比如想要设置忽略某种后缀文件，Git中，在Git工作区下建立一个名为.gitignore的文件，依次向其中写入你不需要git识别、提交的文件，git就不会对工作区中符合列表中条件的文件进行版本跟踪。.gitignore会被提交到仓库也影响对其他人提交的过滤，只在本地生效的方法是修改.git/info/exclude，书写规则相同，则不会影响其它人的设置。</p>
+
+<p>SVN设置忽略要使用svn:ignore指令，旧版本的SVN更低效，每个文件夹底下有一个.svn，管理起来相当麻烦。据说新版的更改了这种管理方式。</p>
+
+<p>把SVN仓库转换到Git仓库经典做法是使用官方提供的svn2git脚本。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -721,52 +742,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h3 class="entry-title"><a href="/blog/2014/03/09/san-mao-zhi-sa-ha-la-sha-mo/">三毛之撒哈拉沙漠</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-09T19:47:00+08:00" pubdate data-updated="true">Mar 9<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>三毛跟荷西说要去撒哈拉旅行，荷西便不声不响去撒哈拉申请一份工作，比三毛还提早两个月去。荷西给三毛写了信，希望留住三毛在自己的身边，不然“就不能减去这份痛楚的感觉”。撒哈拉的故事开始于荷西，这是一段属于三毛和荷西的故事。比起《雨季不再来》虚实交错的充满了想象力的文字，《撒哈拉的故事》的画面感来得更加真切。一个由三毛说出来的撒哈拉沙漠的故事。</p>
-
-<p>沙漠中只有风和沙，沙漠里往往今天重复着昨天的故事。那里的女人，是“百分之九十不知道自己的岁数”，估计也不会知道年代和日期。再加上那块地方的撒哈拉属于西班牙管治，西班牙人本是天性浪漫的民族，本地撒哈威人又懒惰者居多，生活节奏非常慢，日子必须是无聊的。生性不甘寂寞的三毛又怎么能受的了啊，也只有敏感者如三毛才能从其中发现那么多感人的故事。</p>
-
-<p>三毛就是胆子大，又生来有悲天悯人的同情心。所以三毛在沙漠里结识了很多本地的撒哈威朋友。在三毛的文字里，撒哈拉威人大多男的长的威武，也不乏有俊秀的，女的长的非常漂亮，却用布巾把全身裹的紧紧的。撒哈拉威人不洗澡，因此有了“沙漠观浴记”，传闻有个亚洲女人到处看人洗澡，真是哪里来了点稀奇事，三毛就要掏空心思弄清楚。撒哈拉威人有点事情也不去医院，所以三毛做起了本地土医，她用阿司匹林治好别人的头痛，用红酒给产后的母羊治病，用指甲油补了几个撒哈拉威朋友的牙齿，真真是个赤脚医生，不过她从来都是付出无收获的。撒哈拉威人往往不知道自己的岁数，女孩十多岁要结婚，也要由外人来告诉她，然后嫁给一个没有见过面的男子。然后有了“娃娃新娘”姑卡。撒哈拉威人拿别人的东西那么理所当然，当然也是会还的，但是用的破破旧旧的了也不理，然后就有了“芳邻”。沙漠的风俗很奇特，偶尔还有巫蛊之术，三毛太爱拾破烂，“死果”写了三毛一次中招的故事。看三毛的最大好处在于同样的故事，在她絮叨来就是那么精彩有趣。</p>
-
-<p>《撒哈拉的故事》的基调，其实有点悲伤。故事的开头大有苦中作乐的意思。想当年三毛把三十万块钱藏到枕头里直奔小镇阿雍而去，被荷西劝说存起来，跟荷西领着每个月几千块钱的薪水，房租两千，过着包心菜每斤十六块钱的小日子，日子本还算过得去。三毛每个月去军营上买一次菜，每天的生活用水都得节制着用，物质在那里极度缺乏，但那还不是关键的。三毛可是个有精神追求的人呐，即使她在沙漠中也有那么些朋友。书中很多次提到的姑卡，想必是三毛的好朋友，才有十岁。三年一隔阂，五年一代沟，三毛面对姑卡，除了以长辈之经验教给她之外，恐怕不能有精神上的交流。想想还真是寂寞。台湾人很关心快不快乐，三毛在寂寞中找快乐。她变着花样做菜，吃得荷西和荷西的朋友，荷西的老板心里很受用，也因此有了&#8221;沙漠中的饭店&#8221;。</p>
-
-<p>《撒哈拉的故事》就像一支沙漠协奏曲，曲子时而欢呼雀跃，时而悲伤婉转，跌宕起伏，优雅动听。在故事的结尾有些悲伤，我想要不是因为荷西，三毛最终是想要离开沙漠的。</p>
-
-<p><img src="/images/echo/CAM00939.jpg" style="display: block; margin: 0 auto; width: 350px"/></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -780,6 +755,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/06/09/svnhe-git/">Svn和Git比较</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2015/02/25/pythonzhi-shan/">Python之禅</a>
@@ -797,10 +776,6 @@
         <a href="/blog/2015/01/03/ya-suo-suan-fa-you-lie-zhi-bi-jiao/">无损压缩算法优劣之比较</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/10/28/gai-bian/">改变</a>
-      </li>
-    
   </ul>
 </section>
 
@@ -810,7 +785,7 @@
 <section>
   <h1>Categories</h1>
   <ul id="categories">
-    <li class='category'><a href='/blog/categories/20-min-tech/'>20-Min-Tech (4)</a></li>
+    <li class='category'><a href='/blog/categories/20-min-tech/'>20-Min-Tech (5)</a></li>
 <li class='category'><a href='/blog/categories/shu-ping/'>Shu-Ping (3)</a></li>
 <li class='category'><a href='/blog/categories/women-i-love/'>Women_I_Love (5)</a></li>
 
